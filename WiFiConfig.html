@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--<meta http-equiv="Content-Type" content="text/html; charset=GBK" />-->
+		<meta charset="GBK">
+		<meta name="viewport"content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible"content="ie=edge">
+		<title>不知名up的ESP8266网页配网</title>
+		
+	</head>
+	<body>
+		<form name="my">
+			WiFi名称：
+			<input type="text" name="s" placeholder="请输入您WiFi的名称" id="aa">
+			 <br>
+			WiFi密码：
+			<input type="text" name="p" placeholder="请输入您WiFi的密码" id="bb">
+			 <br>
+			<input type="button" value="连接" onclick="wifi()">
+		</form>
+		<script language="javascript">
+			
+			function wifi()
+			{
+				var ssid = my.s.value;
+				var password = bb.value;
+				var xmlhttp=new XMLHttpRequest();
+				xmlhttp.open("GET","/HandleVal?ssid="+ssid+"&password="+password,true);
+				xmlhttp.send()	
+				alert("用户名为："+ssid+' '+"密码为："+password);
+			}
+		</script>
+	</body>
+</html>
